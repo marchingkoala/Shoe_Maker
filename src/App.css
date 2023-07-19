@@ -1,3 +1,40 @@
 .app_container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.app_container nav{
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+.shoe_container{
+  width: 100vw;
+  height: 600px
+}
+
+.color_picker{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input{
+  width: 80px;
+  height: 40px;
+}
+
+.input_container{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  height:auto;
 }
