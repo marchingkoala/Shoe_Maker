@@ -1,3 +1,26 @@
+.home_container{
+  display: flex;
+  height: 100vh;
+  width: auto;
+  flex-direction: column;
+}
+
+.nav_section{
+  height: 100px;
+  width: 100vw;
+  background-color: rgb(222, 222, 222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_section h1{
+  /* font-family: 'Glory', sans-serif; */
+  font-family: 'JMH SS', sans-serif;
+  color:black;
+  font-size: 40pt;
+}
+
 .app_container {
   height: 100vh;
   display: flex;
@@ -25,6 +48,7 @@ nav a{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 input{
