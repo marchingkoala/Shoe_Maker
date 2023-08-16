@@ -95,18 +95,6 @@ const Picker =() =>{
 
 const Tester = () => {
   const snap = useSnapshot(state)
-  // const [suede, setSuede ]  = useState("#ffffff")
-  // const [heelPU, setHeelPU ]  = useState("#ffffff")
-  // const [toeCap, setToeCap] = useState("#ffffff")
-  // const [sidePU, setSidePU] = useState("#ffffff")
-  // const [nylon, setNylon] = useState("#ffffff")
-  // const [eva, setEva] = useState("#ffffff")
-  // const [lace, setLace] = useState("#ffffff")
-  // const [tpr, setTpr] = useState("green")
-  // const [midsoleSTR, setMidsoleSTP] = useState("#ffffff")
-  // const [label, setLabel] = useState("#ffffff")
-  // const [sideLogo, setSideLogo] = useState("green")
-  // const [backLogo, setBackLogo] = useState("green")
 
     return (
     <div className='app_container'>
@@ -116,43 +104,12 @@ const Tester = () => {
           <ambientLight>
             <spotLight intensity={0.9} angle={0.1} penumbra={1} position={[10,15,10]} castShadow/>
             <Jogger />
-        {/* <Jogger customeColor ={{ suede:suede, heelPU:heelPU, toeCap:toeCap, sidePU:sidePU, lace:lace, 
-          eva:eva, tpr:tpr, nylon:nylon, midsoleSTR:midsoleSTR, label:label, sideLogo:sideLogo, backLogo:backLogo}} /> */}
         <OrbitControls enablePan={true} enableZoom={true} enableRotate={true}/>
         <Environment preset='city'/>
           </ambientLight>
         </Suspense>
       </Canvas>
       <Picker />
-      </div>
-      <div className='color_picker'>
-      <h2>Color Picker</h2>
-      {/* <div className='input_container'>
-        <input type="color" id="suede" name="suede" value={suede} onChange={(e)=> setSuede(e.target.value)}/>
-        <label for="mesh">Eyelet Suede</label>
-        <input type="color" id="heelPU" name="heelPU" value={heelPU} onChange={(e)=> setHeelPU(e.target.value)}/>
-        <label for="mesh">Heel PU</label>
-        <input type="color" id="toeCap" name="toeCap" value={toeCap} onChange={(e)=> setToeCap(e.target.value)}/>
-        <label for="mesh">Toe Cap</label>
-        <input type="color" id="sidePU" name="sidePU" value={sidePU} onChange={(e)=> setSidePU(e.target.value)}/>
-        <label for="mesh">Side PU</label>
-        <input type="color" id="eva" name="eva" value={eva} onChange={(e)=> setEva(e.target.value)}/>
-        <label for="mesh">EVA</label>
-        <input type="color" id="tpr" name="tpr" value={tpr} onChange={(e)=> setTpr(e.target.value)}/>
-        <label for="mesh">TPR</label>
-        <input type="color" id="nylon" name="nylon" value={nylon} onChange={(e)=> setNylon(e.target.value)}/>
-        <label for="mesh">Nylon</label>
-        <input type="color" id="lace" name="lace" value={lace} onChange={(e)=> setLace(e.target.value)}/>
-        <label for="mesh">Lace</label>
-        <input type="color" id="midsoleSTR" name="midsoleSTR" value={midsoleSTR} onChange={(e)=> setMidsoleSTP(e.target.value)}/>
-        <label for="mesh">Midsole Stripe</label>
-        <input type="color" id="label" name="label" value={label} onChange={(e)=> setLabel(e.target.value)}/>
-        <label for="mesh">Tongue Label</label>
-        <input type="color" id="sideLogo" name="sideLogo" value={sideLogo} onChange={(e)=> setSideLogo(e.target.value)}/>
-        <label for="mesh">Side Logo</label>
-        <input type="color" id="backLogo" name="backLogo" value={backLogo} onChange={(e)=> setBackLogo(e.target.value)}/>
-        <label for="mesh">Back Logo</label>
-      </div> */}
       </div>
     </div>
     );
