@@ -24,15 +24,9 @@
 .app_container {
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-}
-
-.app_container nav{
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
+  justify-content:space-evenly;
 }
 
 nav a{
@@ -40,25 +34,35 @@ nav a{
 }
 
 .shoe_container{
-  width: 100vw;
+  width: 65%;
   height: 600px
 }
 
 .color_picker{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 100px;
+  width: 300px;
+  background: #f0f0f4;
+  border-radius: 9px;
 }
 
-input{
-  width: 80px;
-  height: 40px;
+.color_picker .react-colorful{
+  width: auto;
 }
 
-.input_container{
+.picker_swatches{
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-around;
-  width: 80%;
-  height:auto;
+}
+
+
+.picker_swatch {
+  width: 30px;
+  height: 30px;
+  margin: 4px;
+  border: none;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
 }

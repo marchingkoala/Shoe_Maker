@@ -4,24 +4,25 @@ import { Canvas } from '@react-three/fiber'
 import { Environment, OrbitControls, useGLTF } from '@react-three/drei'
 import { proxy, useSnapshot } from 'valtio';
 import { HexColorPicker } from 'react-colorful';
+import './App.css'
 
 //using valtio's proxy for better state management
 //useState below was looking a little too messy
 const state = proxy({
-  current: "blank",
+  current: " ",
   items: {
-    suede:"#ffffff",
-    heelPU:"#ffffff",
-    toeCap:"#ffffff",
-    sidePU:"#ffffff",
-    nylon:"#ffffff",
-    eva:"#ffffff",
-    lace:"#ffffff",
-    tpr:"#ffffff",
-    midsoleSTR:"#ffffff",
-    label:"#ffffff",
-    sideLogo:"#ffffff",
-    backLogo:"#ffffff",
+    suede:"#1d1d1d",
+    heelPU:"#1d1d1d",
+    toeCap:"#1d1d1d",
+    sidePU:"#1d1d1d",
+    nylon:"#ece8e5",
+    eva:"#ece8e5",
+    lace:"#ece8e5",
+    tpr:"#926846",
+    midsoleSTR:"#1d1d1d",
+    label:"#ece8e5",
+    sideLogo:"#ece8e5",
+    backLogo:"#ece8e5",
   }
 })
 
@@ -40,7 +41,7 @@ function Jogger({...props}) {
     //when clicked, it will change the valtio state's current value
     onPointerDown={(e)=>{ e.stopPropagation(); state.current = e.object.material.name }}
     //when click is missed, current value is set back to null
-    onPointerMissed={(e)=>{ state.current = "blank"}}
+    onPointerMissed={(e)=>{ state.current = " "}}
     >
       <mesh geometry={nodes.STITCH_COLLAR.geometry} material={materials.nylon} material-color={snap.items.nylon}  position={[-0.05, -0.68, 0.031]} rotation={[0.013, 0.035, -0.012]} scale={[0.248, 0.221, 0.221]} />
       <mesh geometry={nodes.STITCH_EYESTAY.geometry} material={materials.suede_1} material-color={snap.items.suede} position={[0.304, 0.728, -0.089]} rotation={[0.013, 0.035, -0.012]} scale={[0.248, 0.222, 0.227]} />
@@ -82,12 +83,23 @@ function Jogger({...props}) {
 const Picker =() =>{
   const snap = useSnapshot(state)
   let material = snap.current.split("_")[0]
+  let preset = ["#d1bfbf", "#d1959d", "#b17483", "#899d91", "#e5dece", "#f0ede8", "#aa7b51", "#282b34"]
   return(
-    <div style={{display: material ? "block":"none"}}>
+    <div className='color_picker'>
       <HexColorPicker className='picker' 
       color={snap.items[material]}
       onChange={(color)=> (state.items[material] = color)} />
-      <h1>{material}</h1>
+      <div className='picker_swatches'>
+        {preset.map((color)=> {
+          return <button 
+            key={color}
+            className='picker_swatch'
+            style={ {background : color }}
+            onClick={()=> state.items[material] = color}
+          />
+        })}
+      </div>
+      <h2>{material}</h2>
     </div>
   )
 }
@@ -109,8 +121,8 @@ const Tester = () => {
           </ambientLight>
         </Suspense>
       </Canvas>
-      <Picker />
       </div>
+      <Picker />
     </div>
     );
 };
