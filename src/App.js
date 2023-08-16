@@ -3,7 +3,9 @@ import {  Routes, Route} from "react-router-dom";
 import Tester from './Tester';
 import Home from './Home';
 
-  //run npx gltfjsx 'path' to convert file into a js file
+// gltf-pipeline -i TQ-1910.gltf -o jogger.glb --draco.compressionLevel=10
+// run npx gltfjsx 'path' to convert file into a js file
+
  
 function App() {
 
