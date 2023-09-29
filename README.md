@@ -5,6 +5,7 @@ Shoe maker was created to reduce back-and-forth between buyers and designers by 
 With Shoe Maker, you can...
     • import 3D models created by blender
     • customize 3D model's color as you like
+    • figure out the closest pantone color of the colors you picked ( feature TBD )
 
 # How to set up
 
